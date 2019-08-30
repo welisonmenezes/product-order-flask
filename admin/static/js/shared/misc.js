@@ -54,6 +54,7 @@ var lightColor = getComputedStyle(document.body).getPropertyValue('--light');
     });
 
     function appendBanner() {
+      return;
       var bannerState = localStorage.getItem('bannerState') ? localStorage.getItem('bannerState') : "enabled";
       if (bannerState == "enabled") {
         $("body").addClass("purchase-banner-active");
