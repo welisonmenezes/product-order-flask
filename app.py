@@ -9,9 +9,6 @@ def create_app():
     # apply app configurations
     app.config.from_pyfile('config.py')
 
-    # initialize the api blueprint
-    app.register_blueprint(adm.adminBP)
-
     # routes all nonexistent route to /
     @app.route('/')
     def index():
@@ -20,5 +17,8 @@ def create_app():
     @app.route('/produtos')
     def produtos():
         return render_template('products.html'), 200
+
+    # initialize the api blueprint
+    app.register_blueprint(adm.adminBP)
 
     return app
